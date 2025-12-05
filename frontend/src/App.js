@@ -1,9 +1,10 @@
 // src/App.js - Enhanced LLM Clinical Co-Pilot UI
-const API_URL = "https://clinical-copilot-cn7u.onrender.com";
+
 
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "./App.css";
+const API_URL = "https://clinical-copilot-cn7u.onrender.com";
 
 // Simple Markdown renderer component
 function MarkdownRenderer({ content }) {
