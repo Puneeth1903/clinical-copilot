@@ -1,4 +1,6 @@
 // src/App.js - Enhanced LLM Clinical Co-Pilot UI
+const API_URL = "https://clinical-copilot-cn7u.onrender.com";
+
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "./App.css";
@@ -215,7 +217,7 @@ function AssistantPage() {
     setResponse(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:5001/api/assistant", {
+      const res = await fetch("https://clinical-copilot-cn7u.onrender.com/api/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -385,7 +387,7 @@ function DrugCheckerPage() {
     setResult(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:5001/api/assistant", {
+      const res = await fetch("https://clinical-copilot-cn7u.onrender.com/api/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -551,7 +553,7 @@ function HistoryPage() {
 
   async function loadHistory() {
     try {
-      const res = await fetch("http://127.0.0.1:5001/api/history");
+      const res = await fetch("https://clinical-copilot-cn7u.onrender.com/api/history");
       const data = await res.json();
       setItems(data.items || []);
     } catch (err) {
